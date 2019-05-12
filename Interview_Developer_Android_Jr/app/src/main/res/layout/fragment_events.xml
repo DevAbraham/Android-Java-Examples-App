@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+
+    tools:context=".Fragments.EventsFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/txxTituloFramentEvents"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:layout_centerInParent="true"
+                    android:text="Ingresa Un Año" />
+
+                <EditText
+                    android:id="@+id/etYear"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="100dp"
+                    android:layout_below="@+id/txxTituloFramentEvents"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:layout_centerInParent="true"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btnYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etYear"
+                    android:textSize="14dp"
+                    android:layout_centerInParent="true"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:text="Obtener dato relevante"
+                    android:layout_marginTop="14dp"
+                    android:textAllCaps="false"
+                    />
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:background="@drawable/shape_et"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/btnYear"
+
+                    />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titledate"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:text="Selecciona un dia y mes" />
+
+                <RelativeLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rldate"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/titledate"
+                    android:layout_centerInParent="true"
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/rlDay"
+                        android:layout_alignParentLeft="true"
+                        android:layout_height="wrap_content">
+                        <Spinner
+                            android:id="@+id/spinnerDay"
+                            android:textAlignment="center"
+                            android:background="@drawable/shape_et"
+                            android:layout_width="wrap_content"
+                            android:foregroundGravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/spinnerDay"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/white"
+                            android:text=" Dia"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+
+                        android:layout_toLeftOf="@+id/rlDay"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="wrap_content">
+                        <Spinner
+                            android:id="@+id/spinnerMonth"
+                            android:background="@drawable/shape_et"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/spinnerMonth"
+                            android:text=" Mes"
+                            android:textColor="@color/white"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btnMonthDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rldate"
+                    android:textSize="14dp"
+                    android:layout_centerInParent="true"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:text="Obtener dato relevante"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    />
+                <TextView
+                    android:id="@+id/tvMonthDay"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/btnMonthDay"
+                    android:background="@drawable/shape_et"
+
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

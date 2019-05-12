@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/login_background"
+
+    android:layout_height="match_parent"
+    tools:context=".Activities.Login">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivLogin"
+            android:layout_width="150dp"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_height="150dp"
+            app:lottie_fileName="data.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:text="App Entrenimiento"
+            android:typeface="serif"
+            android:id="@+id/tvTitleMain"
+            android:layout_below="@id/lyAnimation"
+            android:layout_toLeftOf="@+id/animation_4"
+            />
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_et"
+            android:typeface="serif"
+            android:hint="@string/et_in_user"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:typeface="serif"
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/shape_et"
+            android:inputType="textPassword"
+            android:textSize="15dp"
+            android:hint="@string/et_in_pass"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/shape_btn"
+            android:onClick="Acceder"
+            android:text="@string/btn_log"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            android:typeface="serif" />
+
+    </LinearLayout>
+</RelativeLayout>

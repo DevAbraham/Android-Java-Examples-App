@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">App Entretenimiento</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="et_in_user">Ingrese Usuario</string>
+    <string name="et_in_pass">Ingrese Password</string>
+    <string name="btn_log">Inicia Sesión o Registrate!</string>
+    <string name="item_profile">Perfil</string>
+    <string name="item_main">Principal</string>
+    <string name="item_trivia">Trivia Números</string>
+    <string name="item_events">Acontecimientos</string>
+    <string name="item_starwars">Star Wars</string>
+    <string name="item_dogs">Perritos</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
