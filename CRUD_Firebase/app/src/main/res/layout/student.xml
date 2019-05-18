@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:layout_margin="2dp"
+    android:layout_height="230dp">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_weight="0.50"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:textStyle="bold"
+                android:text="Nombre:"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:text="Nombre"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:textStyle="bold"
+                android:text="Apellido Paterno:"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/tvAPaterno"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:text="Nombre"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.50"
+            android:layout_height="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:textStyle="bold"
+                android:text="Numero:"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:text="Nombre"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:textStyle="bold"
+                android:text="Apellido Materno:"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/tvAMaterno"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:text="Nombre"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:text="Email:"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            />
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="0dp"
+            android:layout_weight="0.60"
+            android:layout_height="match_parent"
+            android:text="Nombre"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            />
+    </LinearLayout>
+
+</LinearLayout>
