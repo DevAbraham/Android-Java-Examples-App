@@ -26,7 +26,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="!fol"
+            android:authorities="com.dev_abraham.take_photo_and_display.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

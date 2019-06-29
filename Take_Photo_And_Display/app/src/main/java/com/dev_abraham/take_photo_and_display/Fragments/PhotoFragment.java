@@ -52,16 +52,15 @@ public class PhotoFragment extends Fragment {
     ImageView ivImage;
     Button btnPicture;
     private String urlPicture;
-    private String mCurrentPhotoPath=null;
+    private String mCurrentPhotoPath = null;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1000;
     private static final int GET_FILE_ACTIVITY_REQUEST_CODE = 2000;
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root  = inflater.inflate(R.layout.fragment_photo, container, false);
+        View root = inflater.inflate(R.layout.fragment_photo, container, false);
 
         tvTitle = root.findViewById(R.id.tvTitle);
         btnPicture = root.findViewById(R.id.btnPicture);
@@ -79,8 +78,8 @@ public class PhotoFragment extends Fragment {
         }
     };
 
-    public void takePhoto(){
-        if(isStoragePermissionGranted()){
+    public void takePhoto() {
+        if (isStoragePermissionGranted()) {
             selectImage();
         }
     }
@@ -89,27 +88,27 @@ public class PhotoFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                Toast.makeText(getContext(),"Foto Actualizada",Toast.LENGTH_LONG).show();
-                urlPicture=mCurrentPhotoPath;
+                Toast.makeText(getContext(), "Foto Actualizada", Toast.LENGTH_LONG).show();
+                urlPicture = mCurrentPhotoPath;
                 displayFile();
-            }else{
+            } else {
                 File file = new File(mCurrentPhotoPath);
                 file.delete();
-                Toast.makeText(getContext(),"Cancelo la fotografia",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Cancelo la fotografia", Toast.LENGTH_LONG).show();
             }
-        }else if (requestCode == GET_FILE_ACTIVITY_REQUEST_CODE){
+        } else if (requestCode == GET_FILE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 Uri selectedImage = data.getData();
-                String[] filePath = { MediaStore.Images.Media.DATA };
-                Cursor c = getActivity().getContentResolver().query(selectedImage,filePath, null, null, null);
+                String[] filePath = {MediaStore.Images.Media.DATA};
+                Cursor c = getActivity().getContentResolver().query(selectedImage, filePath, null, null, null);
                 c.moveToFirst();
                 int columnIndex = c.getColumnIndex(filePath[0]);
                 String picturePath = c.getString(columnIndex);
                 c.close();
-                urlPicture=picturePath;
-                Toast.makeText(getContext(),"Foto Actualizada",Toast.LENGTH_LONG).show();
+                urlPicture = picturePath;
+                Toast.makeText(getContext(), "Foto Actualizada", Toast.LENGTH_LONG).show();
                 displayFile();
-            }else{
+            } else {
 
 
             }
@@ -155,21 +154,21 @@ public class PhotoFragment extends Fragment {
         return image;
     }
 
-    private void displayFile(){
+    private void displayFile() {
         File file = new File(urlPicture);
-        if(file.exists()){
+        if (file.exists()) {
             Bitmap bitmap = BitmapFactory.decodeFile(urlPicture);
-            int orientation =readPictureDegree(urlPicture);
+            int orientation = readPictureDegree(urlPicture);
             ivImage.setImageBitmap(bitmap);
             ivImage.setRotation(orientation);
-        }else{
-            Toast.makeText(getContext(),"No se encontro foto de perfil",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getContext(), "No se encontro foto de perfil", Toast.LENGTH_LONG).show();
         }
     }
 
 
     public static int readPictureDegree(String path) {
-        int degree  = 0;
+        int degree = 0;
         try {
             ExifInterface exifInterface = new ExifInterface(path);
             int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
@@ -192,23 +191,19 @@ public class PhotoFragment extends Fragment {
 
     private void selectImage() {
 
-        final CharSequence[] options = { "Tomar Fotografia", "Elige una de la galeria","Cancelar" };
+        final CharSequence[] options = {"Tomar Fotografia", "Elige una de la galeria", "Cancelar"};
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Agrega una foto de perfil");
         builder.setItems(options, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                if (options[item].equals("Tomar Fotografia"))
-                {
+                if (options[item].equals("Tomar Fotografia")) {
                     dispatchTakePictureIntent();
-                }
-                else if (options[item].equals("Elige una de la galeria"))
-                {
-                    Intent intent = new   Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                } else if (options[item].equals("Elige una de la galeria")) {
+                    Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, GET_FILE_ACTIVITY_REQUEST_CODE);
-                }
-                else if (options[item].equals("Cancelar")) {
+                } else if (options[item].equals("Cancelar")) {
                     dialog.dismiss();
                 }
             }
@@ -216,21 +211,20 @@ public class PhotoFragment extends Fragment {
         builder.show();
     }
 
-    public  boolean isStoragePermissionGranted() {
+    public boolean isStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getActivity().checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v(TAG,"Permission is granted");
+                Log.v(TAG, "Permission is granted");
                 return true;
             } else {
 
-                Log.v(TAG,"Permission is revoked");
+                Log.v(TAG, "Permission is revoked");
                 ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 return false;
             }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            Log.v(TAG,"Permission is granted");
+        } else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG, "Permission is granted");
             return true;
         }
     }
@@ -238,8 +232,8 @@ public class PhotoFragment extends Fragment {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Log.v(TAG, "Permission: " + permissions[0] + "was " + grantResults[0]);
             //resume tasks needing this permission
         }
     }
