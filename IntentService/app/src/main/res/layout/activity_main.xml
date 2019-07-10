@@ -1,55 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorCream"
-    android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".Activities.MainActivity">
 
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:layout_height="80dp"
-        android:textSize="50sp"
-        android:textAlignment="center"
-        android:text="IntentService"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/colorCream"
-        android:progressBackgroundTint="@color/colorRed"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="IntentService"
+                android:textAlignment="center"
+                android:textColor="@color/colorIcons"
+                android:textSize="48sp" />
 
-        />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:src="@mipmap/ic_launcher_round" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvPorcentaje"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:text="0 %"
-        android:layout_height="50dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnService"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/buton_shape"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:text="Start Service"
-        android:textSize="30sp"
-        />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:progressBackgroundTint="@color/colorAccent" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tvPorcentaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0 %"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Start Service"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:theme="@style/RaisedButtonDark" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
